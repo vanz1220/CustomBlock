@@ -1,48 +1,50 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
- */
 import { __ } from '@wordpress/i18n';
-
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
- */
-import { useBlockProps } from '@wordpress/block-editor';
-
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
+import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import './editor.scss';
+import { Panel, PanelBody, TextControl }	from '@wordpress/components';
+import { useState } from '@wordpress/element';
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/developers/block-api/block-edit-save/#edit
- *
- * @return {WPElement} Element to render.
- */
 export default function Edit() {
+	const [ className, setClassName ] = useState( '' );
+	const [ clientID, setClientID ] = useState( '' );
+	const [ clientSecret, setClientSecret ] = useState( '' );
 	return (
-		// <p {...useBlockProps()}>
-		// 	{__('Ibl Block – hello from the editor!', 'ibl-block')}
-		// </p>,
+		
+
 		<div {...useBlockProps()}>
+			<InspectorControls>
+					<Panel>
+						<PanelBody title='IBL Custom Block'>
+							<TextControl
+								label="Wordpress Site Url"
+								value={ className }
+								onChange={ ( value ) => setClassName( value ) }
+								placeholder={'Enter Wordpress Site Url...'}
+							/>
+							<TextControl
+								label="Client ID"
+								value={ clientID }
+								onChange={ ( value ) => setClientID( value ) }
+								placeholder={'Enter Client ID...'}
+							/>
+							<TextControl
+								label="Client Secret"
+								value={ clientSecret }
+								onChange={ ( value ) => setClientSecret( value ) }
+								placeholder={'Enter Client Secret...'}
+							/>
+						</PanelBody>
+						
+					</Panel>
+			</InspectorControls>
 			<div class="ibl-block">
 				<label>Wordpress Site <span class="acf-required">*</span></label>
-				<input class="indentinput" type="url" Placeholder="Enter Wordpress Url..." required="required"></input>
-				<label>OAuth2 API credentials</label>
-				<label class="indentlabel">Client ID <span class="acf-required">*</span></label>
-				<input class="indentinput" type="text" Placeholder="Enter Client ID..." required="required"></input>
-				<label class="indentlabel">Client Secret <span class="acf-required">*</span></label>
-				<input class="indentinput" type="password" Placeholder="Enter Client Password..." required="required"></input>
+				<input type="text" placeholder='Enter Wordpress Site Url...' value={ className } onChange={(e) => setClassName(e.target.value)}/>
+				<label>OAuth2 API credentials:</label>
+				<label class="indentlabel">Client ID: <span class="acf-required">*</span></label>
+				<input class="indentInput" type="text" placeholder='Enter Client ID...' value={ clientID } onChange={(e) => setClientID(e.target.value)}/>
+				<label class="indentlabel">Client Secret: <span class="acf-required">*</span></label>
+				<input class="indentInput" type="text" placeholder='Enter Client Secret...' value={ clientSecret } onChange={(e) => setClientSecret(e.target.value)}/>
 			</div>
 		</div>
 	);
