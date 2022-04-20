@@ -56,25 +56,34 @@ function Edit() {
   return (// <p {...useBlockProps()}>
     // 	{__('Ibl Block – hello from the editor!', 'ibl-block')}
     // </p>,
-    (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Wordpress Site ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "ibl-block"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Wordpress Site ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       class: "acf-required"
-    }, "*"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    }, "*")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+      class: "indentinput",
       type: "url",
       Placeholder: "Enter Wordpress Url...",
       required: "required"
-    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "OAuth2 API credentials"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Client ID ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "OAuth2 API credentials"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+      class: "indentlabel"
+    }, "Client ID ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       class: "acf-required"
     }, "*")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+      class: "indentinput",
       type: "text",
       Placeholder: "Enter Client ID...",
       required: "required"
-    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Client Secret ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+      class: "indentlabel"
+    }, "Client Secret ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       class: "acf-required"
     }, "*")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+      class: "indentinput",
       type: "password",
       Placeholder: "Enter Client Password...",
       required: "required"
-    }))
+    })))
   );
 }
 
@@ -179,25 +188,30 @@ function save() {
   return (// <p {...useBlockProps.save()}>
     // 	{__('Ibl Block – hello from the saved content!', 'ibl-block')}
     // </p>,
-    (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Wordpress Site ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      class: "ibl-block"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Wordpress Site ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       class: "acf-required"
     }, "*")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+      class: "indentinput",
       type: "url",
       Placeholder: "Enter Wordpress Url...",
       required: "required"
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "OAuth2 API credentials"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Client ID ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       class: "acf-required"
     }, "*")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+      class: "indentinput",
       type: "text",
       Placeholder: "Enter Client ID...",
       required: "required"
     }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, "Client Secret ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       class: "acf-required"
     }, "*")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+      class: "indentinput",
       type: "password",
       Placeholder: "Enter Client Password...",
       required: "required"
-    }))
+    })))
   );
 }
 

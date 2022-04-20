@@ -27,15 +27,16 @@ export default function save() {
 		// <p {...useBlockProps.save()}>
 		// 	{__('Ibl Block – hello from the saved content!', 'ibl-block')}
 		// </p>,
-		<div {...useBlockProps.save()}>
-		<label>Wordpress Site <span class="acf-required">*</span>
-		</label>
-		<input type="url" Placeholder="Enter Wordpress Url..." required="required"></input>
-		<label>OAuth2 API credentials</label>
-		<label>Client ID <span class="acf-required">*</span></label>
-		<input type="text" Placeholder="Enter Client ID..." required="required"></input>
-		<label >Client Secret <span class="acf-required">*</span></label>
-		<input type="password" Placeholder="Enter Client Password..." required="required"></input>
+	<div {...useBlockProps.save()}>
+		<div class="ibl-block">
+			<label>Wordpress Site <span class="acf-required">*</span></label>
+			<input class="indentinput" type="url" Placeholder="Enter Wordpress Url..." required="required"></input>
+			<label>OAuth2 API credentials</label>
+			<label>Client ID <span class="acf-required">*</span></label>
+			<input class="indentinput" type="text" Placeholder="Enter Client ID..." required="required"></input>
+			<label >Client Secret <span class="acf-required">*</span></label>
+			<input class="indentinput" type="password" Placeholder="Enter Client Password..." required="required"></input>
+		</div>
 	</div>
 	);
 }

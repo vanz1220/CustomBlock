@@ -35,16 +35,15 @@ export default function Edit() {
 		// 	{__('Ibl Block – hello from the editor!', 'ibl-block')}
 		// </p>,
 		<div {...useBlockProps()}>
-			<label>Wordpress Site <span class="acf-required">*</span>
-			</label>
-		</div>,
-		<div>
-			<input type="url" Placeholder="Enter Wordpress Url..." required="required"></input>
-			<label>OAuth2 API credentials</label>
-			<label>Client ID <span class="acf-required">*</span></label>
-			<input type="text" Placeholder="Enter Client ID..." required="required"></input>
-			<label >Client Secret <span class="acf-required">*</span></label>
-			<input type="password" Placeholder="Enter Client Password..." required="required"></input>
+			<div class="ibl-block">
+				<label>Wordpress Site <span class="acf-required">*</span></label>
+				<input class="indentinput" type="url" Placeholder="Enter Wordpress Url..." required="required"></input>
+				<label>OAuth2 API credentials</label>
+				<label class="indentlabel">Client ID <span class="acf-required">*</span></label>
+				<input class="indentinput" type="text" Placeholder="Enter Client ID..." required="required"></input>
+				<label class="indentlabel">Client Secret <span class="acf-required">*</span></label>
+				<input class="indentinput" type="password" Placeholder="Enter Client Password..." required="required"></input>
+			</div>
 		</div>
 	);
 }
