@@ -11,9 +11,13 @@
 }
 
 .ibl-block {
-  display: -ms-grid;
-  display: grid;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 100%;
   justify-content: center;
+  align-content: center;
+  padding: 20px 70px;
 }
 
 .indentinput {
