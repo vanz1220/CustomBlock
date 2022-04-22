@@ -46,6 +46,7 @@ export default function Edit() {
 				<input class="indentInput" type="text" placeholder='Enter Client ID...' value={ clientID } onChange={(e) => setClientID(e.target.value)}/>
 				<label class="indentlabel">Client Secret: <span class="acf-required">*</span></label>
 				<input class="indentInput" type="text" placeholder='Enter Client Secret...' value={ clientSecret } onChange={(e) => setClientSecret(e.target.value)}/>
+				<button class="btnSend">Send</button>
 			</div>
 		</div>
 	);

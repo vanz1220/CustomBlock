@@ -1,8 +1,8 @@
 {
 	"name": "ibl-block",
-	"version": "0.1.0",
-	"description": "Example static block scaffolded with Create Block tool.",
-	"author": "The WordPress Contributors",
+	"version": "1.0.0",
+	"description": "Create A Custom Block for IBL Blocks..",
+	"author": "IFormatLogic - IJEM",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",
 	"scripts": {

@@ -3,9 +3,9 @@
 	"apiVersion": 2,
 	"name": "create-block/ibl-block",
 	"version": "1.0.0",
-	"title": "Ibl Block",
-	"category": "design",
-	"icon": "html",
+	"title": "Information Block",
+    "icon": "reddit",
+    "category": "text",
 	"description": "Create A Custom Block for IBL Blocks.",
 	"supports": {
 		"html": false

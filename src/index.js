@@ -1,37 +1,86 @@
-/**
- * Registers a new block provided a unique name and an object defining its behavior.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
- */
 import { registerBlockType } from '@wordpress/blocks';
-
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * All files containing `style` keyword are bundled together. The code used
- * gets applied both to the front of your site and to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
 import './style.scss';
-
 /**
  * Internal dependencies
  */
-import Edit from './edit';
-import save from './save';
+//import Edit from './edit';
+//import save from './save';
 
-/**
- * Every block starts by registering a new block type definition.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
- */
+
 registerBlockType('create-block/ibl-block', {
-	/**
-	 * @see ./edit.js
-	 */
-	edit: Edit,
-	/**
-	 * @see ./save.js
-	 */
-	save,
+	attributes: {
+		wpSite: { type: 'string'},
+		clientID: { type: 'string'},
+		clientSecret: { type: 'string'}
+	},
+	edit: function (props){
+
+		function updateSite(event){ props.setAttributes({ wpSite: event.target.value}) }
+		function updateclientID(event){ props.setAttributes({ clientID: event.target.value}) }
+		function updateclientSecret(event){ props.setAttributes({ clientSecret: event.target.value}) }
+
+		return	React.createElement("div", {
+			class: "ibl-block"
+		  }, /*#__PURE__*/React.createElement("label", null, "Wordpress Site ", /*#__PURE__*/React.createElement("span", {
+			class: "acf-required"
+		  }, "*")), /*#__PURE__*/React.createElement("input", {
+			type: "text",
+			placeholder: "Enter Wordpress Site Url...",
+			value: props.attributes.wpSite,
+			onChange: updateSite
+		  }), /*#__PURE__*/React.createElement("label", null, "OAuth2 API credentials:"), /*#__PURE__*/React.createElement("label", {
+			class: "indentlabel"
+		  }, "Client ID: ", /*#__PURE__*/React.createElement("span", {
+			class: "acf-required"
+		  }, "*")), /*#__PURE__*/React.createElement("input", {
+			class: "indentInput",
+			type: "text",
+			placeholder: "Enter Client ID...",
+			value: props.attributes.clientID,
+			onChange: updateclientID
+		  }), /*#__PURE__*/React.createElement("label", {
+			class: "indentlabel"
+		  }, "Client Secret: ", /*#__PURE__*/React.createElement("span", {
+			class: "acf-required"
+		  }, "*")), /*#__PURE__*/React.createElement("input", {
+			class: "indentInput",
+			type: "text",
+			placeholder: "Enter Client Secret...",
+			value: props.attributes.clientSecret,
+			onChange: updateclientSecret
+		  }), /*#__PURE__*/React.createElement("button", {
+			class: "btnSend"
+		  }, "Send"));
+	},
+	save: function (props){
+		return React.createElement("div", {
+			class: "ibl-block"
+		  }, /*#__PURE__*/React.createElement("label", null, "Wordpress Site ", /*#__PURE__*/React.createElement("span", {
+			class: "acf-required"
+		  }, "*")), /*#__PURE__*/React.createElement("input", {
+			type: "text",
+			placeholder: "Enter Wordpress Site Url...",
+			value: props.attributes.wpSite
+		  }), /*#__PURE__*/React.createElement("label", null, "OAuth2 API credentials:"), /*#__PURE__*/React.createElement("label", {
+			class: "indentlabel"
+		  }, "Client ID: ", /*#__PURE__*/React.createElement("span", {
+			class: "acf-required"
+		  }, "*")), /*#__PURE__*/React.createElement("input", {
+			class: "indentInput",
+			type: "text",
+			placeholder: "Enter Client ID...",
+			value: props.attributes.clientID
+		  }), /*#__PURE__*/React.createElement("label", {
+			class: "indentlabel"
+		  }, "Client Secret: ", /*#__PURE__*/React.createElement("span", {
+			class: "acf-required"
+		  }, "*")), /*#__PURE__*/React.createElement("input", {
+			class: "indentInput",
+			type: "text",
+			placeholder: "Enter Client Secret...",
+			value: props.attributes.clientSecret
+		  }), /*#__PURE__*/React.createElement("button", {
+			class: "btnSend"
+		  }, "Send"));
+	}
 });

@@ -13,6 +13,7 @@ export default function save() {
 				<input class="indentInput" type="text" placeholder='Enter Client ID...'/>
 				<label class="indentlabel">Client Secret: <span class="acf-required">*</span></label>
 				<input class="indentInput" type="text" placeholder='Enter Client Secret...'/>
+				<button class="btnSend">Send</button>
 			</div>
 		</div>
 	);
