@@ -1,5 +1,8 @@
 import { registerBlockType } from '@wordpress/blocks';
 import './style.scss';
+import { InspectorControls } from '@wordpress/block-editor';
+import { Panel, PanelBody, TextControl } from '@wordpress/components';
+import { useState } from '@wordpress/element';
 /**
  * Internal dependencies
  */
@@ -18,8 +21,28 @@ registerBlockType('create-block/ibl-block', {
 		function updateSite(event){ props.setAttributes({ wpSite: event.target.value}) }
 		function updateclientID(event){ props.setAttributes({ clientID: event.target.value}) }
 		function updateclientSecret(event){ props.setAttributes({ clientSecret: event.target.value}) }
+		// const [ className, setClassName ] = useState( '' );
+		// const [ clientID, setClientID ] = useState( '' );
+		// const [ clientSecret, setClientSecret ] = useState( '' );
 
-		return	React.createElement("div", {
+		return	React.createElement("div", null, /*#__PURE__*/React.createElement(InspectorControls, null, /*#__PURE__*/React.createElement(Panel, null, /*#__PURE__*/React.createElement(PanelBody, {
+			title: "IBL Custom Block"
+		  }, /*#__PURE__*/React.createElement(TextControl, {
+			label: "Wordpress Site Url",
+			value: props.attributes.wpSite,
+			onChange:  updateSite,
+			placeholder: 'Enter Wordpress Site Url...'
+		  }), /*#__PURE__*/React.createElement(TextControl, {
+			label: "Client ID",
+			value: props.attributes.clientID,
+			onChange:  updateclientID,
+			placeholder: 'Enter Client ID...'
+		  }), /*#__PURE__*/React.createElement(TextControl, {
+			label: "Client Secret",
+			value: props.attributes.clientSecret,
+			onChange:  updateclientSecret,
+			placeholder: 'Enter Client Secret...'
+		  })))), /*#__PURE__*/React.createElement("div", {
 			class: "ibl-block"
 		  }, /*#__PURE__*/React.createElement("label", null, "Wordpress Site ", /*#__PURE__*/React.createElement("span", {
 			class: "acf-required"
@@ -50,7 +73,8 @@ registerBlockType('create-block/ibl-block', {
 			onChange: updateclientSecret
 		  }), /*#__PURE__*/React.createElement("button", {
 			class: "btnSend"
-		  }, "Send"));
+		  }, "Send")));
+
 	},
 	save: function (props){
 		return React.createElement("div", {
