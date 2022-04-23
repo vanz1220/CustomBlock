@@ -16,9 +16,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_4__);
-
 
 
 
@@ -65,18 +62,28 @@ __webpack_require__.r(__webpack_exports__);
 
     return React.createElement("div", null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Panel, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
       title: "IBL Custom Block"
-    }, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-      label: "Wordpress Site Url",
+    }, React.createElement("label", null, "Wordpress Site ", /*#__PURE__*/React.createElement("span", {
+      class: "acf-required"
+    }, "*")), /*#__PURE__*/React.createElement("input", {
+      type: "text",
       value: props.attributes.wpSite,
       onChange: updateSite,
       placeholder: 'Enter Wordpress Site Url...'
-    }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-      label: "Client ID",
+    }), React.createElement("br", null), React.createElement("label", null, "OAuth2 API credentials:"), React.createElement("br", null), /*#__PURE__*/React.createElement("label", {
+      class: "indentlabel"
+    }, "Client ID: ", /*#__PURE__*/React.createElement("span", {
+      class: "acf-required"
+    }, "*")), /*#__PURE__*/React.createElement("input", {
+      type: "text",
       value: props.attributes.clientID,
       onChange: updateclientID,
       placeholder: 'Enter Client ID...'
-    }), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-      label: "Client Secret",
+    }), React.createElement("br", null), React.createElement("label", {
+      class: "indentlabel"
+    }, "Client Secret: ", /*#__PURE__*/React.createElement("span", {
+      class: "acf-required"
+    }, "*")), /*#__PURE__*/React.createElement("input", {
+      type: "text",
       value: props.attributes.clientSecret,
       onChange: updateclientSecret,
       placeholder: 'Enter Client Secret...'
@@ -187,16 +194,6 @@ module.exports = window["wp"]["blocks"];
 /***/ (function(module) {
 
 module.exports = window["wp"]["components"];
-
-/***/ }),
-
-/***/ "@wordpress/element":
-/*!*********************************!*\
-  !*** external ["wp","element"] ***!
-  \*********************************/
-/***/ (function(module) {
-
-module.exports = window["wp"]["element"];
 
 /***/ })
 

@@ -1,8 +1,7 @@
 import { registerBlockType } from '@wordpress/blocks';
 import './style.scss';
 import { InspectorControls } from '@wordpress/block-editor';
-import { Panel, PanelBody, TextControl } from '@wordpress/components';
-import { useState } from '@wordpress/element';
+import { Panel, PanelBody } from '@wordpress/components';
 /**
  * Internal dependencies
  */
@@ -27,18 +26,28 @@ registerBlockType('create-block/ibl-block', {
 
 		return	React.createElement("div", null, /*#__PURE__*/React.createElement(InspectorControls, null, /*#__PURE__*/React.createElement(Panel, null, /*#__PURE__*/React.createElement(PanelBody, {
 			title: "IBL Custom Block"
-		  }, /*#__PURE__*/React.createElement(TextControl, {
-			label: "Wordpress Site Url",
+		  }, React.createElement("label", null, "Wordpress Site ", /*#__PURE__*/React.createElement("span", {
+			class: "acf-required"
+		  }, "*")),/*#__PURE__*/React.createElement("input", {
+			type: "text",
 			value: props.attributes.wpSite,
 			onChange:  updateSite,
 			placeholder: 'Enter Wordpress Site Url...'
-		  }), /*#__PURE__*/React.createElement(TextControl, {
-			label: "Client ID",
+		  }), React.createElement("br", null), React.createElement("label", null, "OAuth2 API credentials:"), React.createElement("br", null),/*#__PURE__*/React.createElement("label", {
+			class: "indentlabel"
+		  }, "Client ID: ", /*#__PURE__*/React.createElement("span", {
+			class: "acf-required"
+		  }, "*")),/*#__PURE__*/React.createElement("input", {
+			type: "text",
 			value: props.attributes.clientID,
 			onChange:  updateclientID,
 			placeholder: 'Enter Client ID...'
-		  }), /*#__PURE__*/React.createElement(TextControl, {
-			label: "Client Secret",
+		  }), React.createElement("br", null),React.createElement("label", {
+			class: "indentlabel"
+		  }, "Client Secret: ", /*#__PURE__*/React.createElement("span", {
+			class: "acf-required"
+		  }, "*")),/*#__PURE__*/React.createElement("input", {
+			type: "text",
 			value: props.attributes.clientSecret,
 			onChange:  updateclientSecret,
 			placeholder: 'Enter Client Secret...'
