@@ -1,7 +1,7 @@
 import { registerBlockType } from '@wordpress/blocks';
-import './style.scss';
 import { InspectorControls } from '@wordpress/block-editor';
 import { Panel, PanelBody } from '@wordpress/components';
+import './style.scss';
 /**
  * Internal dependencies
  */
@@ -87,7 +87,7 @@ registerBlockType('create-block/ibl-block', {
 	},
 	save: function (props){
 		return React.createElement("div", {
-			class: "ibl-block"
+			class: "ibl-block2"
 		  }, /*#__PURE__*/React.createElement("label", null, "Wordpress Site ", /*#__PURE__*/React.createElement("span", {
 			class: "acf-required"
 		  }, "*")), /*#__PURE__*/React.createElement("input", {

@@ -13,13 +13,25 @@
 }
 
 .ibl-block {
-  display: flex;
+  display: -ms-grid;
+  display: grid;
   flex-wrap: nowrap;
   flex-direction: column;
   width: 100%;
   justify-content: center;
   align-content: center;
-  padding: 20px 70px;
+  padding: 20px 25%;
+}
+
+.ibl-block2 {
+  display: -ms-grid;
+  display: grid;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+  padding: 20px;
 }
 
 .RichText {

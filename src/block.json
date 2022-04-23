@@ -4,8 +4,8 @@
 	"name": "create-block/ibl-block",
 	"version": "1.0.0",
 	"title": "Information Block",
-    "icon": "reddit",
-    "category": "text",
+    "icon": "plugins-checked",
+    "category": "design",
 	"description": "Create A Custom Block for IBL Blocks.",
 	"supports": {
 		"html": false

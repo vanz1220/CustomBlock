@@ -8,13 +8,22 @@
 	border: 1px solid #21759b;
 }
 .ibl-block{
-	display: flex;
+	display: grid;
     flex-wrap: nowrap;
     flex-direction: column;
     width: 100%;
     justify-content: center;
     align-content: center;
-    padding: 20px 70px;
+    padding: 20px 25%;
+}
+.ibl-block2{
+    display: grid;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    padding: 20px;
 }
 .indentInput{
 	margin-left: 30px;
