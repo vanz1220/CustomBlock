@@ -38,6 +38,12 @@ __webpack_require__.r(__webpack_exports__);
       type: 'string'
     }
   },
+  backgroundColor: {
+    "type": "string"
+  },
+  textColor: {
+    "type": "string"
+  },
   edit: function (props) {
     function updateSite(event) {
       props.setAttributes({
@@ -59,6 +65,18 @@ __webpack_require__.r(__webpack_exports__);
     // const [ clientID, setClientID ] = useState( '' );
     // const [ clientSecret, setClientSecret ] = useState( '' );
 
+
+    function updateChangeTextColor(newTextColor) {
+      props.setAttributes({
+        textColor: newTextColor
+      });
+    }
+
+    function updateBackgroundColor(newBackgroundColor) {
+      props.setAttributes({
+        backgroundColor: newBackgroundColor
+      });
+    }
 
     return React.createElement("div", null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Panel, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
       title: "IBL Custom Block"

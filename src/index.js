@@ -1,5 +1,5 @@
 import { registerBlockType } from '@wordpress/blocks';
-import { InspectorControls } from '@wordpress/block-editor';
+import { InspectorControls, PanelColorSettings } from '@wordpress/block-editor';
 import { Panel, PanelBody } from '@wordpress/components';
 import './style.scss';
 /**
@@ -15,6 +15,12 @@ registerBlockType('create-block/ibl-block', {
 		clientID: { type: 'string'},
 		clientSecret: { type: 'string'}
 	},
+	backgroundColor: {
+		"type": "string"
+	},	 
+	textColor: {
+		"type": "string"
+	},
 	edit: function (props){
 
 		function updateSite(event){ props.setAttributes({ wpSite: event.target.value}) }
@@ -24,7 +30,10 @@ registerBlockType('create-block/ibl-block', {
 		// const [ clientID, setClientID ] = useState( '' );
 		// const [ clientSecret, setClientSecret ] = useState( '' );
 
-		return	React.createElement("div", null, /*#__PURE__*/React.createElement(InspectorControls, null, /*#__PURE__*/React.createElement(Panel, null, /*#__PURE__*/React.createElement(PanelBody, {
+		function updateChangeTextColor(newTextColor){props.setAttributes({textColor: newTextColor})}
+		function updateBackgroundColor( newBackgroundColor){props.setAttributes({ backgroundColor: newBackgroundColor})}
+
+		return React.createElement("div", null, /*#__PURE__*/React.createElement(InspectorControls, null, /*#__PURE__*/ React.createElement(Panel, null, /*#__PURE__*/React.createElement(PanelBody, {
 			title: "IBL Custom Block"
 		  }, React.createElement("label", null, "Wordpress Site ", /*#__PURE__*/React.createElement("span", {
 			class: "acf-required"
@@ -50,7 +59,7 @@ registerBlockType('create-block/ibl-block', {
 			type: "text",
 			value: props.attributes.clientSecret,
 			onChange:  updateclientSecret,
-			placeholder: 'Enter Client Secret...'
+			placeholder: 'Enter Client Secret...'			
 		  })))), /*#__PURE__*/React.createElement("div", {
 			class: "ibl-block"
 		  }, /*#__PURE__*/React.createElement("label", null, "Wordpress Site ", /*#__PURE__*/React.createElement("span", {
