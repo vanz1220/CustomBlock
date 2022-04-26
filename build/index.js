@@ -11,11 +11,14 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
 /* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
-/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _style_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.scss */ "./src/style.scss");
+
 
 
 
@@ -36,13 +39,15 @@ __webpack_require__.r(__webpack_exports__);
     },
     clientSecret: {
       type: 'string'
+    },
+    bg_color: {
+      type: 'string',
+      default: '#000000'
+    },
+    text_color: {
+      type: 'string',
+      default: '#ffffff'
     }
-  },
-  backgroundColor: {
-    "type": "string"
-  },
-  textColor: {
-    "type": "string"
   },
   edit: function (props) {
     function updateSite(event) {
@@ -66,19 +71,19 @@ __webpack_require__.r(__webpack_exports__);
     // const [ clientSecret, setClientSecret ] = useState( '' );
 
 
-    function updateChangeTextColor(newTextColor) {
+    function onChangeTextColor(event) {
       props.setAttributes({
-        textColor: newTextColor
+        text_color: event
       });
     }
 
-    function updateBackgroundColor(newBackgroundColor) {
+    function onChangeBGColor(event) {
       props.setAttributes({
-        backgroundColor: newBackgroundColor
+        bg_color: event
       });
     }
 
-    return React.createElement("div", null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Panel, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+    return React.createElement("div", null, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Panel, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
       title: "IBL Custom Block"
     }, React.createElement("label", null, "Wordpress Site ", /*#__PURE__*/React.createElement("span", {
       class: "acf-required"
@@ -105,6 +110,17 @@ __webpack_require__.r(__webpack_exports__);
       value: props.attributes.clientSecret,
       onChange: updateclientSecret,
       placeholder: 'Enter Client Secret...'
+    })))), React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Panel, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+      title: "Button Background Color"
+    }, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.ColorPalette // Element Tag for Gutenberg standard colour selector
+    , {
+      onChange: onChangeBGColor // onChange event callback
+
+    }))), /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.Panel, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+      title: "Button Text Color"
+    }, /*#__PURE__*/React.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.ColorPalette, {
+      onChange: onChangeTextColor // onChange event callback
+
     })))), /*#__PURE__*/React.createElement("div", {
       class: "ibl-block"
     }, /*#__PURE__*/React.createElement("label", null, "Wordpress Site ", /*#__PURE__*/React.createElement("span", {
@@ -135,7 +151,11 @@ __webpack_require__.r(__webpack_exports__);
       value: props.attributes.clientSecret,
       onChange: updateclientSecret
     }), /*#__PURE__*/React.createElement("button", {
-      class: "btnSend"
+      class: "btnSend",
+      style: {
+        backgroundColor: props.attributes.bg_color,
+        color: props.attributes.text_color
+      }
     }, "Send")));
   },
   save: function (props) {
@@ -166,7 +186,11 @@ __webpack_require__.r(__webpack_exports__);
       placeholder: "Enter Client Secret...",
       value: props.attributes.clientSecret
     }), /*#__PURE__*/React.createElement("button", {
-      class: "btnSend"
+      class: "btnSend",
+      style: {
+        backgroundColor: props.attributes.bg_color,
+        color: props.attributes.text_color
+      }
     }, "Send"));
   }
 });
@@ -212,6 +236,16 @@ module.exports = window["wp"]["blocks"];
 /***/ (function(module) {
 
 module.exports = window["wp"]["components"];
+
+/***/ }),
+
+/***/ "@wordpress/i18n":
+/*!******************************!*\
+  !*** external ["wp","i18n"] ***!
+  \******************************/
+/***/ (function(module) {
+
+module.exports = window["wp"]["i18n"];
 
 /***/ })
 
